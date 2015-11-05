@@ -1,0 +1,74 @@
+
+
+配置git
+
+	git config --global user.name "your name":	配置git全局用户名
+
+	git config --global user.email "your email":	配置git全局的邮件地址
+
+
+
+
+创建仓库添加文件
+
+	git init： 在一个文件夹中初始化一个git版本控制
+
+	git add readme.txt:  添加文件到暂存区
+
+	git commit -m '描述':  提交更改到仓库
+
+
+
+
+
+版本回退：
+
+	git status:  查看本地仓库中的变化内容
+
+	git diff readme.txt:   查看一个文件的更改
+
+	git log(git log --pretty=oneline):  查看仓库中文件的提交记录
+
+	git reset  --hard HEAD^: 	回退到之前提交的版本（上上个版本HEAD^^）
+
+	git reset  --hard HEAD~100:	回退到前100个版本
+
+	cat readme.txt:		查看一个文件的内容
+
+	git reflog:	显示所有的log（当使用回退版本后再想恢复之前版本，使用此命令查看版本号）
+
+	git reset --hard 版本号：	恢复之前的版本（回退之后使用的居多）
+
+
+
+
+
+Git撤销修改和删除文件操作
+
+	git checkout -- readme.txt: 	丢弃工作区的修改（恢复到资源库中的文件,   未add之前）
+
+	rm b.txt：	删除文件b.txt
+
+
+	
+远程仓库
+	SSH Key:本地仓库与服务器仓库必须有一致的ssh key才能相互操作(push/pull)
+
+
+	ssh-keygen -t rsa -C "goodman_pyq@sina.cn"：  创建SSH Key（第一次在电脑上使用git，存放位置：C:\Users\用户名\.ssh）
+	
+	git remote add origin 仓库地址(https://github.com/PYQKhan/TOS.git)：	将本地的仓库与远程的关联
+	
+	git pull --rebase origin master：	将远程的仓库与本地仓库合并到本地
+	
+	git push -u origin master:	将本地的仓库推送到远程服务器上（第一次用）
+	
+	git push origin master：	将本地的仓库推送到远程服务器上
+	
+	
+
+
+
+
+
+
